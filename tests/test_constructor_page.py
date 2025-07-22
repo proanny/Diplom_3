@@ -43,9 +43,7 @@ class TestConstructorPage:
 
         page.close_ingredient_modal()
 
-        WebDriverWait(driver[0], 5).until(
-            expected_conditions.invisibility_of_element(element),
-        )
+        page.wait_element_hidden(element)
 
         assert element.is_displayed() == False
 
